@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <title>profile-username</title>
+    <link rel="icon" href="../images/logo.png" type="image/x-con">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+   
+    <meta name="description" content="profile">
+    <meta name="keywords" content="profile">
+    
+    <style>
+.survey_col
+{
+    min-height: 100px;
+}
+
+
+.ui-w-100 {
+    width: 100px !important;
+    height: auto;
+}
+
+.card {
+    background-clip: padding-box;
+    box-shadow: 0 1px 4px rgba(24,28,33,0.012);
+}
+
+.user-view-table td:first-child {
+    width: 9rem;
+}
+.user-view-table td {
+    padding-right: 0;
+    padding-left: 0;
+    border: 0;
+}
+
+.text-light {
+    color: #babbbc !important;
+}
+
+.card .row-bordered>[class*=" col-"]::after {
+    border-color: rgba(24,28,33,0.075);
+}    
+
+.text-xlarge {
+    font-size: 170% !important;
+}
+</style>
+</head>
+<body>
+    <div class="m-4">
+        <nav class="navbar navbar-expand-md navbar-light bg-light" style="border-bottom: 1px solid #d6d6d7;">
+            <div class="container-fluid" style="font-size: large;">
+                <a href="#" class="navbar-brand">
+                    <img src="../images/logo.png" height="35" alt="CoolBrand">
+                    <span style="color: blue;">Your</span>
+                    <span style="color: orange;">Opinion</span>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="../index.html" class="nav-item nav-link">Home</a>
+                        <a href="public.html" class="nav-item nav-link ">Public</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                    </div>
+                   <div class="navbar-nav ms-auto">
+                        <div class="align-items-center">
+                            <a href="profile.html">
+                                <img src="../images/user-account-flat-icon-vector-14992789.jpg" height="45" width="45" alt="avatar"
+                                class="rounded-circle" style="object-fit: fill; overflow: hidden;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    
+    
+    
+  
+    <div class="container">
+            <div class="row">
+              <div class="col mb-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="e-profile">
+                      <div class="row justify-content-between">
+                        <div class="col-12 col-sm-auto mb-3">
+                            <div class="e-profile d-flex justify-content-center">
+                                <img id="profileImage" src="../images/user-account-flat-icon-vector-14992789.jpg" alt="avatar" class="rounded-circle" 
+                                style="height: 220px; width: 220px; object-fit:fill; overflow: hidden;">
+                                <input type="file" class="file-input" id="fileInput" style="display: none;" accept=".jpeg, .png, .gif, .bmp, .svg">
+                            </div>
+                        </div>
+                        <div class="col d-flex flex-column flex-sm-row mb-3 align-items-center">
+                          <div class="text-center text-sm-left mb-2 mb-sm-0">
+                            <h4 id="nickname_picture" class="pt-sm-2 pb-1 mb-0 text-nowrap">Nickname</h4>
+                            <div class="text-muted"><strong>Status: </strong><small>active</small></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs flex-column flex-md-row flex-wrap" id="MyTab"> <!-- Додано класи flex-column, flex-md-row та flex-wrap -->
+                            <li class="nav-item">
+                                <a href="#main" class="nav-link active" data-bs-toggle="tab">Main</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#about" class="nav-link" data-bs-toggle="tab">About me</a>
+                            </li>
+                            <li class="nav-item" id="NavMine">
+                                <a href="#mine" class="nav-link" data-bs-toggle="tab">My survey</a>
+                            </li>
+                            <li class="nav-item" id="NavConmplete">
+                                <a href="#completed" class="nav-link" data-bs-toggle="tab">Completed</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    
+                      <div class="card-body">
+                          <div class="tab-content pt-3">
+                            <div class="tab-pane active" id="main">
+                                <div class="row justify-content-end">
+                                    <div class="col-auto">
+                                        <button id="change_main" type="button" class="btn btn-secondary">
+                                             <i class="bi bi-pencil-square"></i>
+                                         </button>
+                                    </div>
+                                </div>
+                              <form class="form">
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <h6 class="mt-4 mb-3">General</h6>
+                                        <table class="table user-view-table m-0">
+                                            <tbody>
+                                              <tr>
+                                                <td>Nickname:</td>
+                                                <td id="nickname" style="display: block;">nickname</td>
+                                                <td style="display: none;" id="nickname_input_div"><input maxlength="20" id="nickname_input" style="width: 75%;"></input></td>
+                                              </tr>
+                                              <tr>
+                                                <td>Name:</td>
+                                                <td id="name" style="display: block;">Name </td>
+                                                <td style="display: none;" id="name_input_div"><input maxlength="20" id="name_input" style="width: 75%;"></input></td>
+                                              </tr>
+                                              <tr>
+                                                <td>Surname:</td>
+                                                <td id="surname" style="display: block;">Surname </td>
+                                                <td style="display: none;" id="surname_input_div"><input maxlength="20" id="surname_input" style="width: 75%;"></input></td>
+                                              </tr>
+                                              <tr>
+                                                <td>E-mail:</td>
+                                                <td id="email" style="display: block;">example@gmail.com</td>
+                                                <td style="display: none;" id="email_input_div"><input maxlength="30" id="email_input" style="width: 75%;"></input></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                      <div class="col-md-6">
+
+                                        <h6 class="mt-4 mb-3">Personal info</h6>
+                                        <table class="table user-view-table m-0">
+                                        <tbody>
+                                            <tr>
+                                                <td>Birthday:</td>
+                                                <td id="birthday" style="display: block;">Month Day, Year</td>
+                                                <td style="display: none;" id="birthday_input_div"><input id="birthday_input" type="date" class="form-control"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Country:</td>
+                                                <td id="country" style="display: block;">country</td>
+                                                <td style="display: none;" id="country_input_div"><input id="country_input" style="width: 75%;"></input></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Languages:</td>
+                                                <td id="language" style="display: block;">language</td>
+                                                <td style="display: none;" id="language_input_div"><input id="language_input" style="width: 75%;"></input></td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </form>
+                              <div class="d-flex justify-content-end me-2 mt-3">
+                                  <button id="CancelMain" type="button" class="btn-secondary" style="display: none;">Cancel</button>
+                                  <button id="ChangeMain" type="button" class="btn btn-primary ml-2" style="display: none;">Submit</button>
+                              </div>
+                            </div>
+                            <div class="tab-pane" id="about">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3>About me</h3>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="input-group justify-content-end">
+                                            <button id="change_about" type="button" class="btn btn-secondary">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p id="AboutMe">text</p>
+                                        <textarea id="EditAbout" rows="15" class="form-control" style="display: none;"></textarea>
+                                        <div class="d-flex justify-content-end me-2 mt-3">
+                                            <button id="CancelAbout" type="button" class="btn-secondary" style="display: none;">Cancel</button>
+                                            <button id="ChangeAbout" type="button" class="btn btn-primary ml-2" style="display: none;">Submit</button>          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="mine">
+                                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3>My survey</h3>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-end">
+                                    <div class="col-lg-3">
+                                        <div class="input-group">
+                                            <input id="SearchText0" type="text" class="form-control" placeholder="Search...">
+                                            <button id="SearchBtn0" type="button" class="btn btn-secondary">
+                                                <i class="bi-search"></i>
+                                            </button>
+                                            <button id = "SearchClean0" type="button" class="btn btn-secondary ml-2">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                <div id="my_surveys" class="row">
+                                   
+                                </div>
+                                
+                                <nav>
+                                    <ul class="pagination justify-content-end mt-4" id="navMine">
+                                        <!--В майбутньому зроблю функцію, яка буде змінювати вміст рядка, що зверху-->
+                                        <li id="previousMine" class="page-item"><a id="back" class="page-link">Previous</a></li>
+                                        <li id="nextMine" class="page-item"><a id="next" class="page-link">Next</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <div class="tab-pane" id="completed">
+                                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3>Completed</h3>
+                                    </div>
+
+                                </div>
+                                <div class="row justify-content-end">
+                                    <div class="col-lg-3">
+                                        <div class="input-group">
+                                            <input id="SearchText1" type="text" class="form-control" placeholder="Search...">
+                                            <button id="SearchBtn1" type="button" class="btn btn-secondary">
+                                                <i class="bi-search"></i>
+                                            </button>
+                                            <button id = "SearchClean1" type="button" class="btn btn-secondary ml-2">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div id="completed_surveys" class="row">
+
+                                </div>
+                                    <nav>
+                                        <ul class="pagination justify-content-end mt-4" id="navComplete">
+                                            <!--В майбутньому зроблю функцію, яка буде змінювати вміст рядка, що зверху-->
+                                            <li id="previousComplete" class="page-item"><a id="back" class="page-link">Previous</a></li>
+                                            <li id="nextMineComplete" class="page-item"><a id="next" class="page-link">Next</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                          </div>    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../js/main.js"></script>
+</body>

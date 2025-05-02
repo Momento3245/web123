@@ -1,0 +1,20 @@
+    body{
+        margin-top:20px;
+        background:#f0ebf8
+    }
+
+    .survey_col
+    {
+        padding: 10px;
+        border: 1px solid #000000;
+        background-color: white;
+        border-radius: 10px;
+        min-height: 330px;
+        transition: box-shadow 0.3s ease;
+        margin-top: 10px;
+    }
+    
+    .survey_col:hover
+    {
+        box-shadow: 0 0 10px blue;
+    }   
